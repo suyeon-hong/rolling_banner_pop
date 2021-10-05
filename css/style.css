@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+ul,
+ol {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+.listBox {
+  width: 800px;
+  height: 100px;
+  border: 10px solid red;
+  margin: 100px auto;
+  position: relative;
+  overflow: hidden; }
+  .listBox .list {
+    width: 1200px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; }
+    .listBox .list li {
+      width: 120px;
+      height: 100%;
+      float: left;
+      border: 1px solid #bbb;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+
+/*# sourceMappingURL=style.css.map */
