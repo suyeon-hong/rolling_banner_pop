@@ -1,3 +1,5 @@
+
+
 const $list = $(".list");
 let num = 0;
 
@@ -22,10 +24,12 @@ $(".list li").on("click", function(e){
     )
 });
 
-$(".pop .btnClose").on("click", function(e){
+$("body").on("click", ".pop .btnClose", function(e){
     e.preventDefault();
 
-    $(".pop").fadeOut();
+    $(".pop").fadeOut(500, function(){
+        $(this).remove();
+    });
 });
 
 function move(){
