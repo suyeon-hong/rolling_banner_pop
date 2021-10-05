@@ -9,27 +9,37 @@ ol {
 a {
   text-decoration: none; }
 
-.listBox {
-  width: 800px;
-  height: 100px;
-  border: 10px solid red;
-  margin: 100px auto;
-  position: relative;
-  overflow: hidden; }
-  .listBox .list {
-    width: 1200px;
-    height: 100%;
+main {
+  width: 100%;
+  height: 100vh;
+  background: url(../img/bg1.jpg) no-repeat center/cover; }
+  main .typo {
     position: absolute;
-    top: 0;
-    left: 0; }
-    .listBox .list li {
-      width: 120px;
+    top: 50%;
+    left: 50%;
+    width: 900px;
+    transform: translate(-50%, -70%); }
+  main .listBox {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    bottom: 10vh;
+    overflow: hidden; }
+    main .listBox .list {
+      width: calc((100% / 8) * 10);
       height: 100%;
-      float: left;
-      border: 1px solid #bbb;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: center; }
+      background: grba(0, 0, 0, 0.7);
+      position: absolute;
+      top: 0;
+      left: 0; }
+      main .listBox .list li {
+        width: calc(100% / 10);
+        height: 100%;
+        float: left;
+        opacity: 0.5;
+        transition: 0.5s; }
+        main .listBox .list li:hover {
+          opacity: 1; }
 
 /*# sourceMappingURL=style.css.map */
