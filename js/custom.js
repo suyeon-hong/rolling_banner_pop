@@ -16,12 +16,26 @@ $(".listBox").on("mouseleave", function(){
 $(".list li").on("click", function(e){
     e.preventDefault();
 
+    $(".pop").remove();
+
     $("body").append(
         $("<aside class='pop'>").append(
             $("<div class='con'>"),
             $("<span class='btnClose'>").text("close")
         ).fadeIn(500)
     )
+
+    let target = $(this).children("a").attr("href");
+
+    $.ajax({
+        url: target,
+        success: function(data){
+            $(".pop .con").html(data);
+        },
+        error: function(err){
+            console.log(err);
+        }
+    });
 });
 
 $("body").on("click", ".pop .btnClose", function(e){
