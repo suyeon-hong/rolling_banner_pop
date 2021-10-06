@@ -15,12 +15,23 @@ $boxs.on("mouseleave", function(){
 $boxs.on("click", function(e){
     e.preventDefault();
 
+    let target = $(this).children("a").attr("href");
+
+    $(".pop").remove();
     $("body").append(
         $("<div class='pop'>").append(
             $("<div class='con'>"),
             $("<span class='btnClose'>").text("CLOSE")
         ).fadeIn(500)
     )
+
+    $.ajax({
+        url: target
+    }).success(function(data){
+        $(".pop .con").html(data);
+    }).error(function(err){
+        console.error("데이터를 불러오지 못했습니다.");
+    });
 });
 
 $("body").on("click", ".btnClose", function(e){

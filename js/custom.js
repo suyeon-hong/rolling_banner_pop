@@ -33,7 +33,7 @@ $(".list li").on("click", function(e){
             $(".pop .con").html(data);
         },
         error: function(err){
-            console.log(err);
+            console.error("데이터를 불러오지 못했습니다.");
         }
     });
 });
